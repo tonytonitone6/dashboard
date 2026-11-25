@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@import "@fontsource-variable/nunito";
+@import "@fontsource/huninn/chinese-traditional-400.css";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Light: daytime laptop use. Pastel fields carry roles; ink is a deep navy. */
+:root {
+  color-scheme: light;
+  --ground: #fdfcff;
+  --surface: #ffffff;
+  --rail: #eaf6ff;
+  --rail-ink: #50607a;
+  --rail-active: #ffffff;
+  --ink: #2b2d42;
+  --ink-soft: #5a6479;
+  --line: #eceff5;
+  --shade: 43 45 66;
+
+  --pink: #ff8fab;
+  --pink-field: #ffe8ef;
+  --pink-ink: #b83364;
+  --sky: #3897dd;
+  --sky-field: #e3f4ff;
+  --sky-ink: #1b679c;
+  --butter: #ffd84d;
+  --butter-field: #fff4cc;
+  --butter-ink: #7d5a00;
+  --mint: #6fd08c;
+  --mint-field: #e2f7e8;
+  --mint-ink: #1f7643;
+  --tear: #8fd3ff;
+}
+
+/* Dark: late-evening checks. A blue-violet night; role fields stay saturated so pastels still read as pastels. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #16172a;
+  --surface: #202238;
+  --rail: #1c1f36;
+  --rail-ink: #aab2c8;
+  --rail-active: #2c3052;
+  --ink: #eef0fa;
+  --ink-soft: #aab2c8;
+  --line: #2d3050;
+  --shade: 0 0 0;
+
+  --pink: #ff8fab;
+  --pink-field: #5c2a4c;
+  --pink-ink: #ffc6d7;
+  --sky: #6cc0ff;
+  --sky-field: #1d4573;
+  --sky-ink: #c2e5ff;
+  --butter: #ffd84d;
+  --butter-field: #5e4710;
+  --butter-ink: #ffe9a3;
+  --mint: #6fd08c;
+  --mint-field: #18573a;
+  --mint-ink: #b4f2c8;
+  --tear: #8fd3ff;
+}
+
+@theme inline {
+  --font-sans: "Nunito Variable", "Huninn", ui-rounded, system-ui, sans-serif;
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-rail: var(--rail);
+  --color-rail-ink: var(--rail-ink);
+  --color-rail-active: var(--rail-active);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-pink: var(--pink);
+  --color-pink-field: var(--pink-field);
+  --color-pink-ink: var(--pink-ink);
+  --color-sky: var(--sky);
+  --color-sky-field: var(--sky-field);
+  --color-sky-ink: var(--sky-ink);
+  --color-butter: var(--butter);
+  --color-butter-field: var(--butter-field);
+  --color-butter-ink: var(--butter-ink);
+  --color-mint: var(--mint);
+  --color-mint-field: var(--mint-field);
+  --color-mint-ink: var(--mint-ink);
+  --shadow-soft: 0 1px 2px rgb(var(--shade) / 0.06), 0 8px 24px -12px rgb(var(--shade) / 0.18);
+  --shadow-lift: 0 2px 4px rgb(var(--shade) / 0.08), 0 12px 28px -12px rgb(var(--shade) / 0.28);
+}
+
+body {
+  @apply bg-ground font-sans text-ink antialiased;
+  caret-color: var(--sky);
+}
+
+::selection {
+  background: var(--pink-field);
+  color: var(--pink-ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--sky);
+  outline-offset: 2px;
+}
+
+* {
+  scrollbar-color: var(--line) transparent;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* The pet's idle life: a slow bob and an occasional blink. */
+@keyframes pet-bob {
+  50% { transform: translateY(-4px); }
+}
+@keyframes pet-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+@keyframes pet-zzz {
+  0% { opacity: 0; transform: translate(0, 4px); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translate(6px, -10px); }
+}
+.pet-body { animation: pet-bob 3.2s ease-in-out infinite; }
+.pet-eyes { transform-box: fill-box; transform-origin: center; animation: pet-blink 4.6s infinite; }
+.pet-zzz { animation: pet-zzz 2.4s ease-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-body, .pet-eyes, .pet-zzz, .animate-spin, .animate-pulse { animation: none; }
+}

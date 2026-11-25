@@ -1,0 +1,16 @@
+services:
+  api:
+    image: gcr.io/distroless/static-debian12:nonroot
+    container_name: dashboard-api
+    command: ["/app/server"]
+    volumes:
+      - ./bin:/app:ro
+    networks:
+      - nginx
+    restart: unless-stopped
+
+# The host's nginx container proxies /api to dashboard-api:8080 over this network, so no port is published.
+networks:
+  nginx:
+    name: nginx_default
+    external: true

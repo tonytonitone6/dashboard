@@ -1,0 +1,841 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T10:10:51+00:00",
+  "title": "Design System: Dashboard",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Moon Milk",
+        "canonical": "#fdfcff",
+        "tonalRamp": [
+          "#1e0c40",
+          "#2f0e71",
+          "#400ca6",
+          "#5202f3",
+          "#7a3cf6",
+          "#a57ef1",
+          "#cdbaf3",
+          "#f0ebfa"
+        ],
+        "cssVar": "--ground"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#595959",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ],
+        "cssVar": "--surface"
+      },
+      "rail": {
+        "role": "neutral",
+        "displayName": "Morning Sky Rail",
+        "canonical": "#eaf6ff",
+        "tonalRamp": [
+          "#0c2a40",
+          "#0e4771",
+          "#0c64a6",
+          "#028cf3",
+          "#3ca6f6",
+          "#7ec0f1",
+          "#badaf3",
+          "#ebf3fa"
+        ],
+        "cssVar": "--rail"
+      },
+      "rail-ink": {
+        "role": "neutral",
+        "displayName": "Rail Slate",
+        "canonical": "#50607a",
+        "tonalRamp": [
+          "#21252c",
+          "#353d4a",
+          "#495569",
+          "#617493",
+          "#8694ac",
+          "#acb5c4",
+          "#d0d5dc",
+          "#f1f2f4"
+        ],
+        "cssVar": "--rail-ink"
+      },
+      "rail-active": {
+        "role": "neutral",
+        "displayName": "Rail Active",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#595959",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ],
+        "cssVar": "--rail-active"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Navy Ink",
+        "canonical": "#2b2d42",
+        "tonalRamp": [
+          "#21222c",
+          "#35374a",
+          "#494c6a",
+          "#616594",
+          "#8589ad",
+          "#acaec4",
+          "#d0d1dc",
+          "#f1f1f4"
+        ],
+        "cssVar": "--ink"
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Slate Ink",
+        "canonical": "#5a6479",
+        "tonalRamp": [
+          "#22252a",
+          "#383d47",
+          "#4e5565",
+          "#69748c",
+          "#8b94a7",
+          "#afb5c0",
+          "#d2d5da",
+          "#f1f2f3"
+        ],
+        "cssVar": "--ink-soft"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Mist Line",
+        "canonical": "#eceff5",
+        "tonalRamp": [
+          "#1e242e",
+          "#303b4f",
+          "#415171",
+          "#556ea0",
+          "#7c8fb6",
+          "#a6b2c9",
+          "#cdd3df",
+          "#f0f1f5"
+        ],
+        "cssVar": "--line"
+      },
+      "pink": {
+        "role": "primary",
+        "displayName": "Bubblegum Pink",
+        "canonical": "#ff8fab",
+        "tonalRamp": [
+          "#400c19",
+          "#710e27",
+          "#a60c33",
+          "#f3023e",
+          "#f63c6b",
+          "#f17e9b",
+          "#f3bac8",
+          "#faebee"
+        ],
+        "cssVar": "--pink"
+      },
+      "pink-field": {
+        "role": "primary",
+        "displayName": "Petal Field",
+        "canonical": "#ffe8ef",
+        "tonalRamp": [
+          "#400c1c",
+          "#710e2c",
+          "#a60c3b",
+          "#f3024b",
+          "#f63c75",
+          "#f17ea1",
+          "#f3bacb",
+          "#faebef"
+        ],
+        "cssVar": "--pink-field"
+      },
+      "pink-ink": {
+        "role": "primary",
+        "displayName": "Raspberry Ink",
+        "canonical": "#b83364",
+        "tonalRamp": [
+          "#351722",
+          "#5c2438",
+          "#852e4e",
+          "#be3668",
+          "#ce648b",
+          "#d897af",
+          "#e6c6d2",
+          "#f7eef1"
+        ],
+        "cssVar": "--pink-ink"
+      },
+      "sky": {
+        "role": "secondary",
+        "displayName": "Clear Sky",
+        "canonical": "#3897dd",
+        "tonalRamp": [
+          "#142939",
+          "#1d4563",
+          "#236290",
+          "#2587d0",
+          "#57a3db",
+          "#8fbee0",
+          "#c2d9ea",
+          "#edf3f8"
+        ],
+        "cssVar": "--sky"
+      },
+      "sky-field": {
+        "role": "secondary",
+        "displayName": "Sky Field",
+        "canonical": "#e3f4ff",
+        "tonalRamp": [
+          "#0c2c40",
+          "#0e4a71",
+          "#0c6aa6",
+          "#0294f3",
+          "#3cadf6",
+          "#7ec4f1",
+          "#badcf3",
+          "#ebf4fa"
+        ],
+        "cssVar": "--sky-field"
+      },
+      "sky-ink": {
+        "role": "secondary",
+        "displayName": "Harbour Ink",
+        "canonical": "#1b679c",
+        "tonalRamp": [
+          "#142a39",
+          "#1d4663",
+          "#236390",
+          "#268acf",
+          "#58a5da",
+          "#8fbfe0",
+          "#c2daea",
+          "#edf3f8"
+        ],
+        "cssVar": "--sky-ink"
+      },
+      "butter": {
+        "role": "tertiary",
+        "displayName": "Butter",
+        "canonical": "#ffd84d",
+        "tonalRamp": [
+          "#40350c",
+          "#715c0e",
+          "#a6850c",
+          "#f3be02",
+          "#f6cd3c",
+          "#f1d87e",
+          "#f3e6ba",
+          "#faf7eb"
+        ],
+        "cssVar": "--butter"
+      },
+      "butter-field": {
+        "role": "tertiary",
+        "displayName": "Butter Field",
+        "canonical": "#fff4cc",
+        "tonalRamp": [
+          "#40350c",
+          "#715c0e",
+          "#a6850c",
+          "#f3bf02",
+          "#f6ce3c",
+          "#f1d87e",
+          "#f3e6ba",
+          "#faf7eb"
+        ],
+        "cssVar": "--butter-field"
+      },
+      "butter-ink": {
+        "role": "tertiary",
+        "displayName": "Butter Ink",
+        "canonical": "#7d5a00",
+        "tonalRamp": [
+          "#40320c",
+          "#71550e",
+          "#a67b0c",
+          "#f3af02",
+          "#f6c23c",
+          "#f1d17e",
+          "#f3e3ba",
+          "#faf6eb"
+        ],
+        "cssVar": "--butter-ink"
+      },
+      "mint": {
+        "role": "tertiary",
+        "displayName": "Mint",
+        "canonical": "#6fd08c",
+        "tonalRamp": [
+          "#193421",
+          "#275936",
+          "#328049",
+          "#3db762",
+          "#6ac886",
+          "#9bd5ac",
+          "#c8e5d0",
+          "#eef6f1"
+        ],
+        "cssVar": "--mint"
+      },
+      "mint-field": {
+        "role": "tertiary",
+        "displayName": "Mint Field",
+        "canonical": "#e2f7e8",
+        "tonalRamp": [
+          "#173520",
+          "#245c34",
+          "#2d8546",
+          "#36bf5d",
+          "#64ce82",
+          "#97d8aa",
+          "#c6e6cf",
+          "#eef7f0"
+        ],
+        "cssVar": "--mint-field"
+      },
+      "mint-ink": {
+        "role": "tertiary",
+        "displayName": "Mint Ink",
+        "canonical": "#1f7643",
+        "tonalRamp": [
+          "#173624",
+          "#235d3b",
+          "#2c8651",
+          "#34c16e",
+          "#63cf90",
+          "#96d9b2",
+          "#c6e7d3",
+          "#eef7f1"
+        ],
+        "cssVar": "--mint-ink"
+      },
+      "tear": {
+        "role": "tertiary",
+        "displayName": "Tear Blue",
+        "canonical": "#8fd3ff",
+        "tonalRamp": [
+          "#0c2c40",
+          "#0e4a71",
+          "#0c6aa6",
+          "#0294f3",
+          "#3cadf6",
+          "#7ec4f1",
+          "#badcf3",
+          "#ebf4fa"
+        ],
+        "cssVar": "--tear"
+      },
+      "night-ground": {
+        "role": "neutral",
+        "displayName": "Indigo Night",
+        "canonical": "#16172a",
+        "tonalRamp": [
+          "#1e1f2e",
+          "#30324f",
+          "#414471",
+          "#5559a0",
+          "#7c7fb6",
+          "#a6a7c9",
+          "#cdcedf",
+          "#f0f0f5"
+        ],
+        "theme": "dark",
+        "cssVar": "--ground"
+      },
+      "night-surface": {
+        "role": "neutral",
+        "displayName": "Night Paper",
+        "canonical": "#202238",
+        "tonalRamp": [
+          "#1f202d",
+          "#32354d",
+          "#44486e",
+          "#5a5f9b",
+          "#8084b2",
+          "#a8abc7",
+          "#ced0de",
+          "#f0f1f4"
+        ],
+        "theme": "dark",
+        "cssVar": "--surface"
+      },
+      "night-rail": {
+        "role": "neutral",
+        "displayName": "Night Morning Sky Rail",
+        "canonical": "#1c1f36",
+        "tonalRamp": [
+          "#1e202f",
+          "#30344f",
+          "#414672",
+          "#545da1",
+          "#7c82b6",
+          "#a5aaca",
+          "#cdcfdf",
+          "#f0f0f5"
+        ],
+        "theme": "dark",
+        "cssVar": "--rail"
+      },
+      "night-rail-ink": {
+        "role": "neutral",
+        "displayName": "Night Rail Slate",
+        "canonical": "#aab2c8",
+        "tonalRamp": [
+          "#21242c",
+          "#353b4a",
+          "#49526a",
+          "#616e94",
+          "#8590ad",
+          "#abb2c4",
+          "#d0d3dc",
+          "#f1f1f4"
+        ],
+        "theme": "dark",
+        "cssVar": "--rail-ink"
+      },
+      "night-rail-active": {
+        "role": "neutral",
+        "displayName": "Night Rail Active",
+        "canonical": "#2c3052",
+        "tonalRamp": [
+          "#1e202e",
+          "#31344f",
+          "#424771",
+          "#565e9f",
+          "#7d83b5",
+          "#a6aac9",
+          "#cecfdf",
+          "#f0f0f5"
+        ],
+        "theme": "dark",
+        "cssVar": "--rail-active"
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Navy Ink",
+        "canonical": "#eef0fa",
+        "tonalRamp": [
+          "#181d35",
+          "#252e5b",
+          "#2f3d83",
+          "#394fbc",
+          "#6677cc",
+          "#98a3d7",
+          "#c7cce6",
+          "#eeeff6"
+        ],
+        "theme": "dark",
+        "cssVar": "--ink"
+      },
+      "night-ink-soft": {
+        "role": "neutral",
+        "displayName": "Night Slate Ink",
+        "canonical": "#aab2c8",
+        "tonalRamp": [
+          "#21242c",
+          "#353b4a",
+          "#49526a",
+          "#616e94",
+          "#8590ad",
+          "#abb2c4",
+          "#d0d3dc",
+          "#f1f1f4"
+        ],
+        "theme": "dark",
+        "cssVar": "--ink-soft"
+      },
+      "night-line": {
+        "role": "neutral",
+        "displayName": "Night Mist Line",
+        "canonical": "#2d3050",
+        "tonalRamp": [
+          "#1f202e",
+          "#32344e",
+          "#44476f",
+          "#595f9c",
+          "#7f83b3",
+          "#a8aac8",
+          "#ced0de",
+          "#f0f0f4"
+        ],
+        "theme": "dark",
+        "cssVar": "--line"
+      },
+      "night-sky": {
+        "role": "secondary",
+        "displayName": "Night Clear Sky",
+        "canonical": "#6cc0ff",
+        "tonalRamp": [
+          "#0c2a40",
+          "#0e4771",
+          "#0c64a6",
+          "#028cf3",
+          "#3ca6f6",
+          "#7ec0f1",
+          "#badaf3",
+          "#ebf3fa"
+        ],
+        "theme": "dark",
+        "cssVar": "--sky"
+      },
+      "night-pink-field": {
+        "role": "primary",
+        "displayName": "Night Petal Field",
+        "canonical": "#5c2a4c",
+        "tonalRamp": [
+          "#301c2a",
+          "#522d46",
+          "#763c64",
+          "#a74e8b",
+          "#bc76a5",
+          "#cda2bf",
+          "#e1ccda",
+          "#f5eff3"
+        ],
+        "theme": "dark",
+        "cssVar": "--pink-field"
+      },
+      "night-pink-ink": {
+        "role": "primary",
+        "displayName": "Night Raspberry Ink",
+        "canonical": "#ffc6d7",
+        "tonalRamp": [
+          "#400c1c",
+          "#710e2c",
+          "#a60c3a",
+          "#f3024a",
+          "#f63c74",
+          "#f17ea0",
+          "#f3bacb",
+          "#faebef"
+        ],
+        "theme": "dark",
+        "cssVar": "--pink-ink"
+      },
+      "night-sky-field": {
+        "role": "secondary",
+        "displayName": "Night Sky Field",
+        "canonical": "#1d4573",
+        "tonalRamp": [
+          "#172536",
+          "#223e5d",
+          "#2b5687",
+          "#3375c2",
+          "#6295d0",
+          "#95b5da",
+          "#c5d5e7",
+          "#eef2f7"
+        ],
+        "theme": "dark",
+        "cssVar": "--sky-field"
+      },
+      "night-sky-ink": {
+        "role": "secondary",
+        "displayName": "Night Harbour Ink",
+        "canonical": "#c2e5ff",
+        "tonalRamp": [
+          "#0c2a40",
+          "#0e4771",
+          "#0c65a6",
+          "#028cf3",
+          "#3ca7f6",
+          "#7ec0f1",
+          "#badaf3",
+          "#ebf3fa"
+        ],
+        "theme": "dark",
+        "cssVar": "--sky-ink"
+      },
+      "night-butter-field": {
+        "role": "tertiary",
+        "displayName": "Night Butter Field",
+        "canonical": "#5e4710",
+        "tonalRamp": [
+          "#392e14",
+          "#634e1d",
+          "#907023",
+          "#d09d25",
+          "#dbb457",
+          "#e0c88f",
+          "#eadec2",
+          "#f8f4ed"
+        ],
+        "theme": "dark",
+        "cssVar": "--butter-field"
+      },
+      "night-butter-ink": {
+        "role": "tertiary",
+        "displayName": "Night Butter Ink",
+        "canonical": "#ffe9a3",
+        "tonalRamp": [
+          "#40340c",
+          "#715a0e",
+          "#a6820c",
+          "#f3b902",
+          "#f6c93c",
+          "#f1d57e",
+          "#f3e5ba",
+          "#faf6eb"
+        ],
+        "theme": "dark",
+        "cssVar": "--butter-ink"
+      },
+      "night-mint-field": {
+        "role": "tertiary",
+        "displayName": "Night Mint Field",
+        "canonical": "#18573a",
+        "tonalRamp": [
+          "#173527",
+          "#245c42",
+          "#2d855d",
+          "#36bf80",
+          "#64ce9d",
+          "#97d8ba",
+          "#c6e6d7",
+          "#eef7f3"
+        ],
+        "theme": "dark",
+        "cssVar": "--mint-field"
+      },
+      "night-mint-ink": {
+        "role": "tertiary",
+        "displayName": "Night Mint Ink",
+        "canonical": "#b4f2c8",
+        "tonalRamp": [
+          "#143920",
+          "#1d6333",
+          "#239046",
+          "#26cf5c",
+          "#58da82",
+          "#8fe0a9",
+          "#c2eacf",
+          "#edf8f0"
+        ],
+        "theme": "dark",
+        "cssVar": "--mint-ink"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "KPI Value",
+        "purpose": "KPI values only; tabular numerals, unit trails at 1rem bold in role ink."
+      },
+      "headline": {
+        "displayName": "Pet Speech",
+        "purpose": "The pet's speech-bubble sentence."
+      },
+      "title": {
+        "displayName": "Panel Title",
+        "purpose": "Panel and fieldset headings, brand word. Page h1 runs at 1.875rem/800."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Task titles and list text; bubble sub-line at 0.9375rem in ink-soft."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "KPI names, delta rows, chips, nav."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Timestamps, status pills, axis ticks, demo note."
+      }
+    },
+    "shadows": [
+      {
+        "name": "soft",
+        "value": "0 1px 2px rgb(var(--shade) / 0.06), 0 8px 24px -12px rgb(var(--shade) / 0.18)",
+        "purpose": "Panels, active nav item, retry button. --shade is 43 45 66 light, 0 0 0 dark."
+      },
+      {
+        "name": "lift",
+        "value": "0 2px 4px rgb(var(--shade) / 0.08), 0 12px 28px -12px rgb(var(--shade) / 0.28)",
+        "purpose": "The speech bubble only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "pet-bob",
+        "value": "translateY(-4px) at 50%, 3.2s ease-in-out infinite",
+        "purpose": "Idle life of the one animated pet."
+      },
+      {
+        "name": "pet-blink",
+        "value": "scaleY(0.1) at 95%, 4.6s infinite",
+        "purpose": "Occasional blink."
+      },
+      {
+        "name": "pet-zzz",
+        "value": "fade and drift up-right, 2.4s ease-out infinite",
+        "purpose": "Sleepy mood while loading."
+      },
+      {
+        "name": "state-transition",
+        "value": "150ms (Tailwind default ease)",
+        "purpose": "Nav and chip colour changes, retry button 1px rise."
+      },
+      {
+        "name": "spinner",
+        "value": "spin 2.4s linear infinite",
+        "purpose": "Running task icon."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none",
+        "purpose": "Stills pet, spinners and skeleton pulses."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px",
+        "purpose": "Pet sits beside its bubble."
+      },
+      {
+        "name": "md",
+        "value": "768px",
+        "purpose": "Sidebar replaces top bar."
+      },
+      {
+        "name": "lg",
+        "value": "1024px",
+        "purpose": "Two-column overview rows."
+      }
+    ],
+    "focus": {
+      "value": "outline: 3px solid var(--sky); outline-offset: 2px",
+      "purpose": "Global focus-visible ring."
+    }
+  },
+  "components": [
+    {
+      "name": "Retry Button",
+      "kind": "button",
+      "refersTo": "button-retry",
+      "description": "The one action in the pet bubble when the API errors.",
+      "html": "<button class=\"ds-btn-retry\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8\"/><path d=\"M21 3v5h-5\"/></svg>Try again</button>",
+      "css": ".ds-btn-retry{font-family:'Nunito Variable','Huninn',ui-rounded,system-ui,sans-serif;display:inline-flex;align-items:center;gap:6px;background:var(--pink,#ff8fab);color:#2b2d42;border:none;border-radius:9999px;padding:8px 16px;font-size:.875rem;box-shadow:0 1px 2px rgb(43 45 66/.06),0 8px 24px -12px rgb(43 45 66/.18);cursor:pointer;transition:transform 150ms}.ds-btn-retry:hover{transform:translateY(-1px)}.ds-btn-retry:active{transform:translateY(0)}.ds-btn-retry:focus-visible{outline:3px solid var(--sky,#3897dd);outline-offset:2px}"
+    },
+    {
+      "name": "Choice Chips",
+      "kind": "chip",
+      "refersTo": "choice-chip",
+      "description": "Radio pills in Settings for theme and language.",
+      "html": "<div class=\"ds-chips\"><label class=\"ds-chip ds-chip-on\"><input type=\"radio\" name=\"ds-t\" checked>System</label><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-t\">Light</label><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-t\">Dark</label></div>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:8px}.ds-chip{font-family:'Nunito Variable','Huninn',ui-rounded,system-ui,sans-serif;display:flex;align-items:center;gap:8px;background:var(--sky-field,#e3f4ff);color:var(--sky-ink,#1b679c);border-radius:9999px;padding:10px 16px;cursor:pointer;transition:background-color 150ms}.ds-chip input{position:absolute;opacity:0;width:1px;height:1px}.ds-chip:hover{background:var(--rail,#eaf6ff)}.ds-chip:has(:checked),.ds-chip-on{background:var(--sky,#3897dd);color:#10223a}.ds-chip:has(:focus-visible){outline:3px solid var(--sky,#3897dd);outline-offset:2px}"
+    },
+    {
+      "name": "Status Pills",
+      "kind": "chip",
+      "refersTo": "status-pill",
+      "description": "Task status; failed is the loud exception in solid pink.",
+      "html": "<div style=\"display:flex;gap:8px\"><span class=\"ds-pill ds-pill-done\">Done</span><span class=\"ds-pill ds-pill-run\">Running</span><span class=\"ds-pill ds-pill-fail\">Failed</span><span class=\"ds-pill ds-pill-demo\">Demo data</span></div>",
+      "css": ".ds-pill{font-family:'Nunito Variable','Huninn',ui-rounded,system-ui,sans-serif;border-radius:9999px;padding:4px 10px;font-size:.75rem}.ds-pill-done{background:var(--mint-field,#e2f7e8);color:var(--mint-ink,#1f7643)}.ds-pill-run{background:var(--butter-field,#fff4cc);color:var(--butter-ink,#7d5a00)}.ds-pill-fail{background:var(--pink,#ff8fab);color:#2b2d42;font-weight:800}.ds-pill-demo{background:var(--butter,#ffd84d);color:#2b2d42;font-weight:800;padding:2px 10px}"
+    },
+    {
+      "name": "Sidebar Nav",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Sky rail with the still brand pet and rounded nav rows.",
+      "html": "<nav class=\"ds-rail\"><div class=\"ds-brand\"><svg width=\"36\" height=\"36\" viewBox=\"0 0 48 48\" aria-hidden=\"true\"><path fill=\"#ff8fab\" d=\"M11 9 9 2l8 5Zm26 0 2-7-8 5Z\"/><path fill=\"#ff8fab\" d=\"M8 40C3 28 8 8 24 8s21 20 16 32c-3 5-29 5-32 0Z\"/><ellipse cx=\"18\" cy=\"24\" rx=\"3\" ry=\"3.6\" fill=\"#2b2d42\"/><ellipse cx=\"30\" cy=\"24\" rx=\"3\" ry=\"3.6\" fill=\"#2b2d42\"/><path fill=\"none\" stroke=\"#2b2d42\" stroke-linecap=\"round\" stroke-width=\"2.4\" d=\"M20 32q4 3.5 8 0\"/></svg>Dashboard</div><a class=\"ds-nav ds-nav-on\" href=\"#\" aria-current=\"page\">Overview</a><a class=\"ds-nav\" href=\"#\">Settings</a></nav>",
+      "css": ".ds-rail{font-family:'Nunito Variable','Huninn',ui-rounded,system-ui,sans-serif;display:flex;flex-direction:column;gap:6px;background:var(--rail,#eaf6ff);padding:28px 16px;width:216px}.ds-brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.25rem;letter-spacing:-.025em;color:var(--ink,#2b2d42);padding:0 8px 26px}.ds-nav{display:flex;align-items:center;border-radius:16px;padding:12px 16px;color:var(--rail-ink,#50607a);text-decoration:none;transition:background-color 150ms,color 150ms}.ds-nav:hover{background:rgb(255 255 255/.6);color:var(--ink,#2b2d42)}.ds-nav-on{background:var(--rail-active,#fff);color:var(--ink,#2b2d42);box-shadow:0 1px 2px rgb(43 45 66/.06),0 8px 24px -12px rgb(43 45 66/.18)}.ds-nav:focus-visible{outline:3px solid var(--sky,#3897dd);outline-offset:2px}"
+    },
+    {
+      "name": "KPI Tile",
+      "kind": "card",
+      "refersTo": "kpi-tile",
+      "description": "Flat role field whose tone follows the KPI direction.",
+      "html": "<div class=\"ds-kpi\"><div class=\"ds-kpi-name\">Active users</div><div class=\"ds-kpi-val\">3,421</div><div class=\"ds-kpi-delta\">&#8599; 4.2% <span>vs. previous</span></div></div>",
+      "css": ".ds-kpi{font-family:'Nunito Variable','Huninn',ui-rounded,system-ui,sans-serif;display:flex;flex-direction:column;min-height:128px;width:260px;background:var(--mint-field,#e2f7e8);border-radius:24px;padding:16px 20px;color:var(--ink,#2b2d42)}.ds-kpi-name{font-size:.875rem;color:var(--mint-ink,#1f7643)}.ds-kpi-val{font-size:2.5rem;font-weight:800;line-height:1.25;letter-spacing:-.025em;font-variant-numeric:tabular-nums;margin-top:4px}.ds-kpi-delta{margin-top:auto;font-size:.875rem;font-weight:700;color:var(--mint-ink,#1f7643);font-variant-numeric:tabular-nums}.ds-kpi-delta span{font-weight:400;margin-left:4px}"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "The white card every module uses: 28px radius, soft shadow, no border.",
+      "html": "<section class=\"ds-panel\"><h2>Recent tasks</h2><div class=\"ds-row ds-row-fail\"><b>Sync task #102</b><span class=\"ds-row-time\">1 hr ago</span></div><div class=\"ds-row\">Sync task #103<span class=\"ds-row-time ds-soft\">2 hr ago</span></div></section>",
+      "css": ".ds-panel{font-family:'Nunito Variable','Huninn',ui-rounded,system-ui,sans-serif;background:var(--surface,#fff);color:var(--ink,#2b2d42);border-radius:28px;padding:24px;width:360px;box-shadow:0 1px 2px rgb(43 45 66/.06),0 8px 24px -12px rgb(43 45 66/.18)}.ds-panel h2{font-size:1.25rem;font-weight:800;margin:0 0 12px}.ds-row{display:flex;flex-direction:column;border-radius:16px;padding:10px 12px;margin:0 -8px}.ds-row-fail{background:var(--pink-field,#ffe8ef)}.ds-row-time{font-size:.75rem;color:var(--pink-ink,#b83364)}.ds-soft{color:var(--ink-soft,#5a6479)}"
+    },
+    {
+      "name": "Pet Stage",
+      "kind": "custom",
+      "refersTo": "pet-stage",
+      "description": "Signature: the status pet on a mood-coloured field with its speech bubble.",
+      "html": "<section class=\"ds-stage\"><svg class=\"ds-pet\" width=\"128\" height=\"128\" viewBox=\"0 0 150 150\" role=\"img\" aria-label=\"Happy pet\"><ellipse cx=\"75\" cy=\"139\" rx=\"46\" ry=\"6\" fill=\"rgb(43 45 66/.12)\"/><g class=\"ds-pet-body\"><path d=\"M44 40 36 14l24 18zm62 0 8-26-24 18z\" fill=\"#ff8fab\"/><path d=\"M30 120C14 80 28 30 75 28s61 52 45 92c-10 14-80 14-90 0z\" fill=\"#ff8fab\"/><path d=\"M31 118c4 9 84 9 88 0-3 8-9 12-14 13-20 4-46 4-60 0-6-2-11-6-14-13z\" fill=\"#f47396\" opacity=\".55\"/><ellipse cx=\"75\" cy=\"123.5\" rx=\"16\" ry=\"5.5\" fill=\"#ffb8ca\"/><ellipse cx=\"52\" cy=\"46\" rx=\"14\" ry=\"7\" fill=\"#fff\" opacity=\".4\" transform=\"rotate(-28 52 46)\"/><ellipse cx=\"42\" cy=\"88\" rx=\"8\" ry=\"5\" fill=\"#ff6b93\" opacity=\".55\"/><ellipse cx=\"108\" cy=\"88\" rx=\"8\" ry=\"5\" fill=\"#ff6b93\" opacity=\".55\"/><g class=\"ds-pet-eyes\"><ellipse cx=\"58\" cy=\"72\" rx=\"7\" ry=\"9\" fill=\"#2b2d42\"/><ellipse cx=\"92\" cy=\"72\" rx=\"7\" ry=\"9\" fill=\"#2b2d42\"/><circle cx=\"60.5\" cy=\"68.5\" r=\"2.6\" fill=\"#fff\"/><circle cx=\"94.5\" cy=\"68.5\" r=\"2.6\" fill=\"#fff\"/></g><path d=\"M63 92q12 16 24 0z\" fill=\"#2b2d42\" stroke=\"#2b2d42\" stroke-width=\"3\" stroke-linejoin=\"round\"/></g></svg><div class=\"ds-bubble\"><h2>All good!</h2><p>No task has failed. 2 metrics are drifting a little.</p></div></section>",
+      "css": ".ds-stage{font-family:'Nunito Variable','Huninn',ui-rounded,system-ui,sans-serif;display:flex;align-items:center;gap:16px;background:var(--mint-field,#e2f7e8);border-radius:32px;padding:24px;width:480px}.ds-pet{flex-shrink:0}.ds-pet-body{animation:ds-bob 3.2s ease-in-out infinite}.ds-pet-eyes{transform-box:fill-box;transform-origin:center;animation:ds-blink 4.6s infinite}@keyframes ds-bob{50%{transform:translateY(-4px)}}@keyframes ds-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}@media (prefers-reduced-motion:reduce){.ds-pet-body,.ds-pet-eyes{animation:none}}.ds-bubble{position:relative;background:var(--surface,#fff);color:var(--ink,#2b2d42);border-radius:24px;padding:16px 20px;box-shadow:0 2px 4px rgb(43 45 66/.08),0 12px 28px -12px rgb(43 45 66/.28)}.ds-bubble:before{content:'';position:absolute;left:-6px;top:50%;width:16px;height:16px;background:inherit;border-radius:3px;transform:translateY(-50%) rotate(45deg)}.ds-bubble h2{position:relative;font-size:1.5rem;font-weight:800;line-height:1.375;margin:0}.ds-bubble p{position:relative;margin:6px 0 0;font-size:.9375rem;color:var(--ink-soft,#5a6479)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Pocket Pet",
+    "overview": "A small original pink monster lives in the corner of the dashboard and wears the system's state on its face, the way a handheld virtual pet shows hunger. The page around it is a soft, rounded playroom: a near-white ground, a pale sky sidebar, and pastel fields that each carry one meaning. The pet's mood and the field it sits on are derived from the data, so the owner reads one face and one sentence and knows whether to act. Everything else (four KPI tiles, a 30-day trend, a task list) stays quiet unless it has news.\n\nThe world is cute without being childish about information. Numbers are large, extrabold and tabular; status is carried by colour field plus icon plus word, never colour alone. Night mode is a deep blue-violet room where the role fields stay saturated (forest mint, ochre butter, plum pink, deep sky) so the pastels still read as pastels and are not washed into grey.\n\nThe pet is the one living thing on screen: it bobs and blinks at idle, dozes while loading, and goes dizzy on an API error. The brand mark in the sidebar is the same creature held still. Reduced motion stills all of it.",
+    "keyCharacteristics": [
+      "One mascot, one face, one sentence: state is legible before any number is read.",
+      "Four role hues (pink, sky, butter, mint), each with a fill, a pale field and a deep ink.",
+      "Rounded everything, from 16px rows to 32px stage, with pill chips.",
+      "Soft diffuse shadows lift surfaces off the ground; no borders around panels.",
+      "Rounded type: Nunito for Latin and numerals, Huninn (jf 粉圓) for Traditional Chinese."
+    ],
+    "rules": [
+      {
+        "name": "The One Meaning Per Hue Rule",
+        "body": "Pink is failure and the pet, butter is running or watch, mint is healthy, sky is selection, primary data and neutral-flat. A hue is never used decoratively on a surface where it could be read as status.",
+        "section": "colors"
+      },
+      {
+        "name": "The Field-Plus-Ink Rule",
+        "body": "Every role colour ships as a triplet. Text on a field uses that role's ink (pink-ink on pink-field), never the bright fill; a saturated fill (pink, butter, sky) carries the fixed navy ink so it reads the same in both themes.",
+        "section": "colors"
+      },
+      {
+        "name": "The Saturated Night Rule",
+        "body": "In dark mode the role fields are dark and saturated (night-mint-field, night-butter-field, night-pink-field, night-sky-field), with light inks on top. Do not render them as low-opacity tints over the night ground; that greys the world out.",
+        "section": "colors"
+      },
+      {
+        "name": "The Chunky Heading Rule",
+        "body": "Headings are extrabold (800), never semibold; body is regular (400). There is no middle weight in the hierarchy except bold (700) for deltas, units and a failed task's title.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Numbers Rule",
+        "body": "Every number that can change (KPI values, deltas) uses tabular figures so a refresh never jiggles the layout.",
+        "section": "typography"
+      },
+      {
+        "name": "The Fields Are Flat Rule",
+        "body": "A coloured field never casts a shadow; a white card always does. Elevation says \"this is a card\", colour says \"this is a status\".",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do derive the pet's mood and the stage colour from data through one rule set (failed tasks, then the worst KPI at 5%, then happy).",
+      "Do pair every status colour with an icon and a word; colour is never the only signal.",
+      "Do use the field-plus-ink triplet for any new status surface, and the fixed navy ink on saturated pink, butter or sky fills.",
+      "Do keep placeholders in the final shape (sky-field blocks) so loading and error never collapse the layout.",
+      "Do keep exactly one animated pet on screen and stop all idle motion under reduced motion.",
+      "Do give new modules the same panel (28px, surface, soft shadow) and Title heading so they belong."
+    ],
+    "donts": [
+      "Don't draw borders around panels or tiles; separation comes from shadow (cards) or colour (fields).",
+      "Don't put shadows on coloured fields.",
+      "Don't use a role hue decoratively, or introduce a fifth status hue.",
+      "Don't wash night-mode role fields into translucent tints over the ground.",
+      "Don't use semibold headings or square corners."
+    ]
+  }
+}
