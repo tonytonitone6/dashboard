@@ -29,6 +29,7 @@ Open decision: no positioning claim yet; it is a private tool, not a product oth
 - Stack is fixed: Go standard-library API; React 19, Vite, TypeScript, Tailwind v4, Recharts, lucide-react. Do not swap libraries.
 - Light and dark themes are both required, each done properly.
 - Must work on phone widths as well as desktop.
+- The site is on a public address, so the dashboard requires sign-in. Only the owner's Google account is accepted; there are still no other users.
 - i18n is wanted and may use Tolgee.
 - Data today is synthetic demo data from `GET /api/v1/overview`: KPIs (active users, revenue USD, p95 latency ms, error rate %), each with a delta %; a 30-point daily series; six recent activity items with status `done | running | failed`.
 
