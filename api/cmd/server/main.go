@@ -4,22 +4,26 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
-	"dashboard/api/internal/overview"
+	"dashboard/api/internal/auth"
+	"dashboard/api/internal/server"
 )
 
 func main() {
+	cfg, err := auth.ConfigFromEnv(os.Getenv)
+	if err != nil {
+		log.Fatal(err)
+	}
+	// make deploy runs this on the VM before it replaces the running binary.
+	if len(os.Args) > 1 && os.Args[1] == "check-config" {
+		return
+	}
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 	}
-
-	mux := http.NewServeMux()
-	mux.HandleFunc("GET /api/health", func(w http.ResponseWriter, _ *http.Request) {
-		w.Write([]byte("ok"))
-	})
-	overview.Register(mux)
-
 	log.Printf("api listening on :%s", port)
-	log.Fatal(http.ListenAndServe(":"+port, mux))
+	log.Fatal(http.ListenAndServe(":"+port, server.New(cfg, time.Now)))
 }

@@ -3,6 +3,7 @@ services:
     image: gcr.io/distroless/static-debian12:nonroot
     container_name: dashboard-api
     command: ["/app/server"]
+    env_file: .env
     volumes:
       - ./bin:/app:ro
     networks:
