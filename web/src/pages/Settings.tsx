@@ -1,8 +1,13 @@
 import { useTolgee, useTranslate } from '@tolgee/react'
-import { Monitor, Moon, Sun } from 'lucide-react'
-import type { ReactNode } from 'react'
+import { CircleAlert, LogOut, Monitor, Moon, Sun } from 'lucide-react'
+import { type ReactNode, useState } from 'react'
 import { type Language, languages } from '../i18n/tolgee'
+import { useAccount } from '../session'
 import { type ThemePref, useTheme } from '../theme'
+
+const panel = 'rounded-[1.75rem] bg-surface p-5 shadow-soft md:p-6'
+const chip =
+  'flex cursor-pointer items-center gap-2 rounded-full bg-sky-field px-4 py-2.5 text-sky-ink transition-colors duration-150 hover:bg-rail'
 
 type Option<T extends string> = { value: T; label: string; icon?: ReactNode }
 
@@ -15,14 +20,14 @@ function Choice<T extends string>(props: {
   onChange: (v: T) => void
 }) {
   return (
-    <fieldset className="rounded-[1.75rem] bg-surface p-5 shadow-soft md:p-6">
+    <fieldset className={panel}>
       <legend className="float-left w-full text-xl font-extrabold">{props.legend}</legend>
       <p className="clear-left mt-1 mb-4 text-sm text-ink-soft">{props.hint}</p>
       <div className="flex flex-wrap gap-2">
         {props.options.map((o) => (
           <label
             key={o.value}
-            className="flex cursor-pointer items-center gap-2 rounded-full bg-sky-field px-4 py-2.5 text-sky-ink transition-colors duration-150 hover:bg-rail has-checked:bg-sky has-checked:text-[#10223a] has-focus-visible:outline-3 has-focus-visible:outline-offset-2 has-focus-visible:outline-sky"
+            className={`${chip} has-checked:bg-sky has-checked:text-[#10223a] has-focus-visible:outline-3 has-focus-visible:outline-offset-2 has-focus-visible:outline-sky`}
           >
             <input
               type="radio"
@@ -68,6 +73,39 @@ export function SettingsPage() {
         onChange={(l) => void tolgee.changeLanguage(l)}
         options={languages.map((l) => ({ value: l, label: t(`settings.language.${l}`) }))}
       />
+      <Account />
     </div>
+  )
+}
+
+function Account() {
+  const { t } = useTranslate()
+  const { user, signOut } = useAccount()
+  const [failed, setFailed] = useState(false)
+
+  const onSignOut = () => {
+    setFailed(false)
+    signOut().catch(() => setFailed(true))
+  }
+
+  return (
+    <section className={panel}>
+      <h2 className="text-xl font-extrabold">{t('settings.account')}</h2>
+      <p className="mb-4 text-sm text-ink-soft">
+        {t('settings.account.signedIn', { provider: t(`provider.${user.provider}`), name: user.name })}
+      </p>
+      <div className="flex flex-wrap items-center gap-2">
+        <button type="button" onClick={onSignOut} className={chip}>
+          <LogOut size={16} strokeWidth={2.4} aria-hidden />
+          {t('settings.account.signOut')}
+        </button>
+        {failed && (
+          <p role="alert" className="flex items-center gap-2 rounded-full bg-pink-field px-4 py-2.5 text-sm text-pink-ink">
+            <CircleAlert size={16} strokeWidth={2.4} className="shrink-0" aria-hidden />
+            {t('settings.account.signOutFailed')}
+          </p>
+        )}
+      </div>
+    </section>
   )
 }

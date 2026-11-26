@@ -1,7 +1,10 @@
 import { useTranslate } from '@tolgee/react'
 import { useEffect, useState } from 'react'
 import { Pet } from './components/Pet'
+import { PetPage, PetStage, RetryButton } from './components/PetStage'
 import { type Module, modules } from './modules'
+import { LoginPage } from './pages/Login'
+import { useSession } from './session'
 
 function currentPath() {
   return window.location.hash.replace(/^#\/?/, '') || modules[0].path
@@ -38,6 +41,34 @@ function Brand({ small }: { small?: boolean }) {
 }
 
 export default function App() {
+  const { t } = useTranslate()
+  const { session, retry } = useSession()
+
+  switch (session.kind) {
+    case 'checking':
+      return null
+    case 'retrying':
+      return (
+        <PetPage heading={t('app.name')}>
+          <PetStage mood="sleepy" title={t('pet.sleepy.title')} body={t('pet.sleepy.body')} />
+        </PetPage>
+      )
+    case 'unreachable':
+      return (
+        <PetPage heading={t('app.name')}>
+          <PetStage mood="dizzy" title={t('pet.dizzy.title')} body={t('pet.dizzy.body', { message: session.message })}>
+            <RetryButton onClick={retry} />
+          </PetStage>
+        </PetPage>
+      )
+    case 'signedOut':
+      return <LoginPage reason={session.reason} />
+    case 'signedIn':
+      return <Shell />
+  }
+}
+
+function Shell() {
   const { t } = useTranslate()
   const [path, setPath] = useState(currentPath)
 

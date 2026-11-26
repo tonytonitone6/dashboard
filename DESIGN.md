@@ -113,6 +113,12 @@ components:
     typography: "{typography.label}"
     rounded: "{rounded.pill}"
     padding: "8px 16px"
+  button-sign-in:
+    backgroundColor: "{colors.sky}"
+    textColor: "#10223a"
+    typography: "{typography.body}"
+    rounded: "{rounded.pill}"
+    padding: "10px 16px"
   status-pill:
     backgroundColor: "{colors.mint-field}"
     textColor: "{colors.mint-ink}"
@@ -157,7 +163,7 @@ A small original pink monster lives in the corner of the dashboard and wears the
 
 The world is cute without being childish about information. Numbers are large, extrabold and tabular; status is carried by colour field plus icon plus word, never colour alone. Night mode is a deep blue-violet room where the role fields stay saturated (forest mint, ochre butter, plum pink, deep sky) so the pastels still read as pastels and are not washed into grey.
 
-The pet is the one living thing on screen: it bobs and blinks at idle, dozes while loading, and goes dizzy on an API error. The brand mark in the sidebar is the same creature held still. Reduced motion stills all of it.
+The pet is the one living thing on screen: it bobs and blinks at idle, dozes while loading and while it waits for the owner to sign in, and goes dizzy on an API error. The brand mark in the sidebar is the same creature held still. Reduced motion stills all of it.
 
 **Key Characteristics:**
 - One mascot, one face, one sentence: state is legible before any number is read.
@@ -171,10 +177,10 @@ The pet is the one living thing on screen: it bobs and blinks at idle, dozes whi
 A pastel candy palette on near-white (or blue-violet night), where every hue is a role, not a decoration.
 
 ### Primary
-- **Bubblegum Pink** (pink): the pet's body, the favicon, the retry button, and the failed-task pill. Pink means "the pet" and "something failed". Its pale **Petal Field** (pink-field) backs a failed task row, the sad and dizzy pet stage, and text selection; **Raspberry Ink** (pink-ink) is pink-coded text such as a failed task's timestamp.
+- **Bubblegum Pink** (pink): the pet's body, the favicon, the retry button, and the failed-task pill. Pink means "the pet" and "something failed". Its pale **Petal Field** (pink-field) backs a failed task row, the sad and dizzy pet stage, a failed sign-out message, and text selection; **Raspberry Ink** (pink-ink) is pink-coded text such as a failed task's timestamp.
 
 ### Secondary
-- **Clear Sky** (sky): the primary chart series (4px line, 16% area fill), focus rings, the caret, the sleepy pet's "z", and the selected settings chip. **Sky Field** (sky-field) is the skeleton and placeholder colour and the idle chip; **Harbour Ink** (sky-ink) labels a flat KPI and chip text.
+- **Clear Sky** (sky): the primary chart series (4px line, 16% area fill), focus rings, the caret, the sleepy pet's "z", the selected settings chip, and the sign-in button. **Sky Field** (sky-field) is the skeleton and placeholder colour, the idle chip and the sign-out button; **Harbour Ink** (sky-ink) labels a flat KPI and chip text.
 
 ### Tertiary
 - **Butter** (butter / butter-field / butter-ink): running tasks, KPIs drifting the wrong way by under 5%, the worried pet stage, and the solid "demo data" pill.
@@ -205,7 +211,7 @@ A pastel candy palette on near-white (or blue-violet night), where every hue is 
 
 ### Hierarchy
 - **Display** (800, clamp(1.75rem, 3.2vw, 2.5rem), 1.25, -0.025em, tabular numerals): KPI values only. The unit trails at 1rem bold in the tile's ink colour.
-- **Page Title** (800, 1.875rem): the h1 on pages that show it (Settings). Overview hides its h1 visually; the pet speaks instead.
+- **Page Title** (800, 1.875rem): the h1 on pages that show it (Settings). Overview and the login page hide their h1 visually; the pet speaks instead.
 - **Headline** (800, 1.5rem, 1.375): the pet's speech-bubble sentence.
 - **Title** (800, 1.25rem): panel headings ("Last 30 days", "Recent tasks", settings fieldsets) and the brand word. An optional qualifier follows at 1rem regular in ink-soft.
 - **Body** (400, 1rem, 1.5): task titles, list text. Bubble body runs at 0.9375rem in ink-soft.
@@ -222,6 +228,8 @@ A pastel candy palette on near-white (or blue-violet night), where every hue is 
 App shell on desktop (768px and up): a sticky full-height sky sidebar (13.5rem) with the brand pet and nav, beside a main column capped at 90rem with 32px side padding (40px at 1024px+). On phones the sidebar becomes a sticky top bar of the same rail colour: small brand on the left, compact pill nav on the right, 16px gutters.
 
 Overview grid at 1024px+: row one is the pet stage (up to 31rem) beside a 2x2 KPI grid; row two is the trend panel and the task list at roughly 1.55 : 1. Below 1024px everything stacks; the KPIs stay 2x2 at every width. The pet sits beside its bubble from 640px up and above it below that, where it shrinks from 156px to 128px.
+
+The login page and the startup error stand outside the shell, with no sidebar and no top bar: the pet stage alone, centred in the viewport, capped at the 31rem it has on Overview, with 16px gutters on phones.
 
 Rhythm: 20px between panels, 12px (16px at 768px+) between KPI tiles, 20px panel padding (24px at 768px+). Settings is a single column capped at 48rem.
 
@@ -247,16 +255,27 @@ Soft, pillowy geometry with no sharp corners anywhere. Radii step with size: 16p
 ### Pet (signature)
 The original monster, drawn as a 150-unit SVG: two pointed ears and a gumdrop body in Bubblegum Pink, a deeper underside shade (#f47396 at 55%), a small pale belly (#ffb8ca) set low near the base, clear of the mouth, a white highlight, blush cheeks (#ff6b93 at 55%), and a soft ground shadow. Face features use the fixed navy ink in both themes.
 - **Moods:** happy (open smile), worried (wavy mouth, sweat drop), sad (frown, tear), sleepy (closed eyes, drifting sky "z", while loading), dizzy (spiral eyes, open mouth, on API error).
-- **Mood rules:** failed tasks outrank metric drift; else the worst-moving KPI worries the pet at 5% or more in the unhealthy direction; else happy.
+- **Mood rules:** failed tasks outrank metric drift; else the worst-moving KPI worries the pet at 5% or more in the unhealthy direction; else happy. Signed out, the mood follows the last sign-in attempt instead (see Login Page).
 - **Motion:** 3.2s ease-in-out bob of 4px, a blink every 4.6s, a 2.4s rising "z". All stop under reduced motion.
 - **Still variant:** the brand mark (36px, 30px on phones) and favicon, so only one pet is ever alive on screen.
 
 ### Pet Stage + Speech Bubble
 - **Stage:** a 32px-radius field whose colour follows the mood (mint happy, butter worried, pink sad or dizzy, sky sleepy).
-- **Bubble:** white card, 24px radius, lift shadow, extrabold 1.5rem sentence naming the actionable item, regular sub-line in ink-soft, `aria-live` polite.
+- **Bubble:** white card, 24px radius, lift shadow, extrabold 1.5rem sentence naming the actionable item, regular sub-line in ink-soft, `aria-live` polite. An action (retry, sign-in) sits 12px under the sub-line.
+- One shared component draws both and owns the mood-to-field map, so Overview, the login page and the startup error cannot drift apart.
 
 ### Buttons
 - **Retry:** full pill in Bubblegum Pink with navy ink, 8px 16px, a leading 15px rotate icon, soft shadow. Hover rises 1px over 150ms; active settles back.
+- **Sign in:** a link, not a button, because it navigates to the API. Full pill in solid Clear Sky, 10px 16px, body-size regular text, a leading 16px monochrome provider mark drawn inline in the text colour. The ink is #10223a, the deeper navy the selected chip also carries on sky. No shadow: it is a flat fill like the selected chip. Hover rises 1px over 150ms; focus shows the 3px sky ring. One per sign-in provider, side by side, wrapping when they do not fit.
+- **Sign out (settings):** the idle choice chip as a button: sky-field pill, sky-ink, a leading 16px icon, hover moves to rail. If the request fails, a pink-field pill with pink-ink, an alert icon and a sentence appears beside it.
+
+### Login Page
+The pet stage and nothing else, shown whenever there is no session. The sign-in button sits in the bubble where Overview puts retry, and stays in every state so the owner can always try again.
+- **Asking:** sleepy pet on the sky field; the bubble asks the owner to sign in.
+- **Refused:** sad pet on the pink field; this account has no access.
+- **Did not finish:** dizzy pet on the pink field; try again.
+- **Startup error:** when the API cannot be reached the session is unknown, so this is not the login page: dizzy pet on the pink field with the retry button and no sign-in button. Pressing retry shows the sleepy pet on the sky field until the check returns, so the page never goes blank.
+- While the first session check is in flight nothing is drawn, so a signed-in owner never sees the login page flash.
 
 ### Chips
 - **Status pill:** caption-size full pill on the role's field with the role's ink (done mint, running butter). **Failed** is the exception: solid pink fill, extrabold navy text, so the loudest state is the loudest pill.
@@ -279,7 +298,7 @@ The original monster, drawn as a 150-unit SVG: two pointed ears and a gumdrop bo
 ## Do's and Don'ts
 
 ### Do:
-- **Do** derive the pet's mood and the stage colour from data through one rule set (failed tasks, then the worst KPI at 5%, then happy).
+- **Do** derive the pet's mood and the stage colour from data through one rule set (failed tasks, then the worst KPI at 5%, then happy). Signed out, the mood comes from the sign-in outcome; the stage colour always follows the mood.
 - **Do** pair every status colour with an icon and a word; colour is never the only signal.
 - **Do** use the field-plus-ink triplet for any new status surface, and the fixed navy ink on saturated pink, butter or sky fills.
 - **Do** keep placeholders in the final shape (sky-field blocks) so loading and error never collapse the layout.
